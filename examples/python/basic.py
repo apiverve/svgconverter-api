@@ -14,14 +14,15 @@ API_URL = 'https://api.apiverve.com/v1/svgconverter'
 
 def call_svgconverter_api():
     """
-    Make a GET request to the SVG Converter API
+    Make a POST request to the SVG Converter API
     """
     try:
         headers = {
-            'x-api-key': API_KEY
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json'
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.post(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
