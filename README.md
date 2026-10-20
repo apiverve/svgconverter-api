@@ -1,13 +1,13 @@
-# [SVG Converter API](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [SVG Converter API](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-SVG Converter transforms vector SVG files into raster image formats. Convert SVG logos, icons, and illustrations to PNG, JPG, or WebP for use in applications that don&#x27;t support vector graphics.
+SVG Converter is an SVG to PNG API that transforms vector SVG files into raster image formats. Convert SVG logos, icons, and illustrations to PNG, JPG, or WebP for use in applications that don&#x27;t support vector graphics.
 
 The SVG Converter API provides a simple, reliable way to integrate svg converter functionality into your applications. Built for developers who need production-ready svg converter capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -30,13 +30,17 @@ The SVG Converter API provides a simple, reliable way to integrate svg converter
 ```javascript
 async function callSVGConverterAPI() {
     try {
+        const requestBody = {
+    "outputFormat": "png"
+};
+
         const response = await fetch('https://api.apiverve.com/v1/svgconverter', {
             method: 'POST',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({})
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -161,7 +165,7 @@ go get github.com/apiverve/svgconverter-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [SVG Converter API](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [SVG Converter API](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/svgconverter](https://docs.apiverve.com/ref/svgconverter)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +195,36 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the SVG Converter API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+    "inputFormat": "svg",
+    "outputFormat": "png",
+    "inputSize": 12456,
+    "outputSize": 89012,
+    "mimeType": "image/png",
+    "expires": 1707350400000,
+    "downloadURL": "https://storage.googleapis.com/apiverve/svgconverter/a1b2c3d4.png"
+  },
+  "code": 200
 }
 ```
 
@@ -203,7 +232,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [SVG Converter API](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [SVG Converter API](https://apiverve.com/marketplace/svgconverter?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

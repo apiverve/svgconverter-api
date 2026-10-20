@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: SVG Converter
   description: >-
-    SVG Converter transforms vector SVG files into raster image formats. Convert
-    SVG logos, icons, and illustrations to PNG, JPG, or WebP for use in
-    applications that don't support vector graphics.
+    SVG Converter is an SVG to PNG API that transforms vector SVG files into
+    raster image formats. Convert SVG logos, icons, and illustrations to PNG,
+    JPG, or WebP for use in applications that don't support vector graphics.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/svgconverter:
     post:
-      summary: Convert SVG Image
+      summary: SVG Converter
       description: >-
         Convert an SVG vector image to a raster format. Upload an SVG file to
         convert.
@@ -81,8 +81,7 @@ paths:
                   outputSize: 89012
                   mimeType: image/png
                   expires: 1707350400000
-                  downloadURL: >-
-                    https://storage.googleapis.com/apiverve/svgconverter/a1b2c3d4.png
+                  downloadURL: https://storage.googleapis.com/apiverve/svgconverter/a1b2c3d4.png
                 code: 200
         '401':
           description: Your request was not authorized, or your API Key was invalid
@@ -101,9 +100,9 @@ paths:
                   type: string
                   format: binary
                   description: 'File to upload (accepted: .svg, max 10MB)'
-                  acceptedTypes:
+                  x-acceptedTypes:
                     - .svg
-                  maxSizeMB: 10
+                  x-maxSizeMB: 10
               required:
                 - image
 components:
