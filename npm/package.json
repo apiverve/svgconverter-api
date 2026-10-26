@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/svgconverter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "SVG Converter is an SVG to PNG API that transforms vector SVG files into raster image formats. Convert SVG logos, icons, and illustrations to PNG, JPG, or WebP for use in applications that don't support vector graphics.",
   "main": "index.js",
   "types": "index.d.ts",
