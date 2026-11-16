@@ -4,6 +4,6 @@ require_relative "apiverve_svgconverter/client"
 
 module APIVerve
   module Svgconverter
-    VERSION = "1.2.5"
+    VERSION = "1.2.6"
   end
 end
